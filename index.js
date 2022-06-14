@@ -11,17 +11,11 @@ app.use(flash());
 
 const Farm = require('./models/farm')
 
-
-mongoose.connect('mongodb://localhost:27017/flashDemo', { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => {
-        console.log("MONGO CONNECTION OPEN!!!")
-    })
-    .catch(err => {
-        console.log("OH NO MONGO CONNECTION ERROR!!!!")
-        console.log(err)
-    })
-
-
+mongoose.connect('mongodb://127.0.0.1:/flashDemo', { useNewUrlParser: true, useUnifiedTopology: true })
+.then(()=>{
+    console.log('DB connected')
+})
+ 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
